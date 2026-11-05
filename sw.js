@@ -1,5 +1,5 @@
-const CACHE = 'ns-eway-bill-66d3fad914';
-const SHELL = ["/", "/assets/base.css?v=59d6315e43", "/assets/doc.css?v=1271e229c4", "/assets/i18n.js?v=455b7da3a7", "/assets/store.js?v=eb98e624a1", "/assets/core.js?v=2fde933178", "/assets/gstfetch.js?v=77942f1a8e", "/assets/docs.js?v=67b29ce60c", "/assets/einv.js?v=f578dc539a", "/assets/xlsx.js?v=9c9abd01b6", "/assets/bulk.js?v=b31a72bb21"];
+const CACHE = 'ns-eway-bill-47994e11ae';
+const SHELL = ["/", "/assets/base.css?v=f649108767", "/assets/doc.css?v=1271e229c4", "/assets/i18n.js?v=455b7da3a7", "/assets/store.js?v=eb98e624a1", "/assets/core.js?v=2fde933178", "/assets/gstfetch.js?v=77942f1a8e", "/assets/docs.js?v=67b29ce60c", "/assets/einv.js?v=f578dc539a", "/assets/xlsx.js?v=9c9abd01b6", "/assets/bulk.js?v=b31a72bb21"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n.startsWith('ns-') && n !== CACHE).map(n => caches.delete(n)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
