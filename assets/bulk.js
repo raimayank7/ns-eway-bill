@@ -82,7 +82,8 @@
     });
     return map;
   }
-  function isoDate(v) {
+  function isoDate(v) { var s = isoDate0(v), m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s), x = m && new Date(+m[1], +m[2] - 1, +m[3]); return m && x.getMonth() === +m[2] - 1 && x.getDate() === +m[3] ? s : ''; }   /* a real day only (F3-11) */
+  function isoDate0(v) {
     v = String(v || '').trim();
     var m;
     if (/^\d{5}(\.\d+)?$/.test(v)) return NS.xlsx.serialDate(v);
